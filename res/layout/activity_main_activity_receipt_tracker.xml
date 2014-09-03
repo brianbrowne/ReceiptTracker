@@ -1,0 +1,183 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.receipttracker.MainActivityReceiptTracker"
+    tools:ignore="MergeRootFrame" >
+
+        <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+    <TextView
+        android:id="@+id/databaseshow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="Save Your Receipt" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/databaseshow"
+        android:layout_below="@+id/databaseshow"
+        android:text="Shop:" />
+    
+
+    <EditText
+        android:id="@+id/editBookTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView2"
+        android:ems="10"
+        android:hint="Please enter the name of the shop"
+        android:inputType="text" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/editBookTitle"
+        android:layout_below="@+id/editBookTitle"
+        android:text="Date (format: DD/MM/YYYY):" />
+
+    <EditText
+        android:id="@+id/editBookAuthor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Please enter the date"
+        android:layout_below="@+id/textView3"
+        android:ems="10" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/editBookAuthor"
+        android:layout_below="@+id/editBookAuthor"
+        android:text="Euros:" />
+
+    <EditText
+        android:id="@+id/editBookSubject"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView4"
+        android:ems="10"
+        android:hint="Please enter the euros spent"
+        android:inputType="number" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/editBookSubject"
+            android:layout_below="@+id/editBookSubject"
+            android:text="Cents" />
+
+        <EditText
+            android:id="@+id/editModuleCode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView5"
+            android:ems="10"
+            android:hint="Any additional information"
+            android:inputType="number"/>
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/editModuleCode"
+            android:text="Comments:" />
+
+        <EditText
+            android:id="@+id/editComment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView6"
+            android:ems="10"
+            android:hint="Please enter the cents spent" />
+
+        <TextView
+            android:id="@+id/Spacer1"
+            android:layout_width="match_parent"
+            android:layout_height="25dip"
+            android:layout_below="@+id/editComment"/>
+
+
+
+        <Button
+            android:id="@+id/CSSubmit"
+            android:layout_width="match_parent"
+            android:layout_height="50dip"
+            android:layout_below="@+id/Spacer1"
+            android:onClick="onClickCSSubmit"
+            android:text="Save Receipts" />
+
+        <TextView
+            android:id="@+id/Spacer2"
+            android:layout_width="match_parent"
+            android:layout_height="25dip"
+            android:layout_below="@+id/CSSubmit"/>
+
+        <Button
+            android:id="@+id/GoToDB"
+            android:layout_width="match_parent"
+            android:layout_height="50dip"
+            android:layout_below="@+id/Spacer2"
+            android:onClick="onClickGoToDB"
+            android:text="View Receipts" />
+
+    <Button
+            android:id="@+id/deletedb"
+            android:layout_height="50dp"
+            android:layout_below="@+id/GoToDB"
+            android:layout_width="match_parent"
+            android:onClick="onClickdeletedatabase"
+            android:text="Delete All Records" />
+    
+      <TextView
+            android:id="@+id/Spacer3"
+            android:layout_width="match_parent"
+            android:layout_height="50dip"
+            android:layout_below="@+id/deletedb"/>
+      
+      <ImageButton
+          android:id="@+id/buttonToast"
+          android:layout_below="@+id/Spacer3"
+          android:layout_width="150dp"
+          android:layout_height="150dp"
+          android:layout_centerHorizontal="true"
+          android:contentDescription="@string/selectdate"
+          android:cropToPadding="true"
+          android:src="@drawable/ic_launcher" />
+      
+        <ImageView
+          android:id="@+id/imageView1"
+          android:layout_width="wrap_content"
+          android:layout_centerHorizontal="true"
+          android:layout_height="wrap_content"
+          android:layout_below="@+id/buttonToast"
+          android:src="@drawable/abc_ic_menu_moreoverflow_normal_holo_light" />
+      
+      <Button
+            android:id="@+id/GoToPicture"
+            android:layout_width="match_parent"
+            android:layout_height="50dip"
+            android:layout_below="@+id/imageView1"
+            android:onClick="GoToPicture"
+            android:text="View Receipts" />
+      
+      <TextView
+            android:id="@+id/Spacer4"
+            android:layout_width="match_parent"
+            android:layout_height="80dip"
+            android:layout_below="@+id/GoToPicture"/>
+
+      </RelativeLayout>
+    
+</ScrollView>
